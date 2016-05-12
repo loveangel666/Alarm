@@ -6,5 +6,6 @@ public class Alarm {
     
     public static void main(String[] args) {
         AlarmFrame frame = new AlarmFrame();
+        
     }
 }

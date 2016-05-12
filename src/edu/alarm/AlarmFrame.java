@@ -18,6 +18,7 @@ public class AlarmFrame /*implements ActionListener */{
     static String alarmNumber;
     static SetAlarm sAaN = new SetAlarm(alarmNumber);
     JPanel mainPanel;
+    JPanel timePanel;
     AlarmFrame() {
         final JFrame af = new JFrame();
         /*
