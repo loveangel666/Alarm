@@ -5,6 +5,6 @@ import java.lang.String;
 public class Alarm {
     
     public static void main(String[] args) {
-        AlarmFrame.alarmFrame();
+        AlarmFrame frame = new AlarmFrame();
     }
 }

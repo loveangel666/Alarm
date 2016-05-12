@@ -18,9 +18,10 @@ public class DialogFrame extends JDialog{
     JTextField tfName = new JTextField(14);
     JFormattedTextField jftf;
     SetAlarm sA = new SetAlarm(name);
-    AlarmFrame aF = new AlarmFrame();
+    JPanel mainPanel;
     
-    DialogFrame () {
+    DialogFrame (JPanel mainPanel, int index) {
+    this.mainPanel = mainPanel;
     //super(af, Dialog.DEFAULT_MODALITY_TYPE);//Объекту af из родительского класса придает свойство блокироваться при открытии диалогового окна
     setModal(true);
     //setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -60,6 +61,14 @@ public class DialogFrame extends JDialog{
                             
                             sA.setText(jftf.getText(), tfName.getText());
                             //aF.l1.setText(name);
+                            JPanel timePanel = (JPanel) mainPanel.getComponent(1);
+                            JLabel labelTime = (JLabel) timePanel.getComponent(index);
+                            labelTime.setText( jftf.getText());
+                            
+                            JPanel namePanel = (JPanel) mainPanel.getComponent(2);
+                            JLabel labelName = (JLabel) namePanel.getComponent(index);
+                            labelName.setText( tfName.getText());
+                            
                             //sA.printVars();;
                             setVisible(false);
                             

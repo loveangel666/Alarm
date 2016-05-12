@@ -17,9 +17,8 @@ import javax.swing.border.Border;
 public class AlarmFrame /*implements ActionListener */{
     static String alarmNumber;
     static SetAlarm sAaN = new SetAlarm(alarmNumber);
+    JPanel mainPanel;
     AlarmFrame() {
-    }
-    public static void alarmFrame () {
         final JFrame af = new JFrame();
         /*
         af.setSize(430, 260);
@@ -39,7 +38,7 @@ public class AlarmFrame /*implements ActionListener */{
            
           Border solidBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
            
-          JPanel mainPanel = new JPanel();
+          mainPanel = new JPanel();
           mainPanel.setLayout(new FlowLayout());
            
           //Панель Будильники
@@ -221,7 +220,7 @@ public class AlarmFrame /*implements ActionListener */{
             public void actionPerformed(ActionEvent evnt) {
                 alarmNumber = "1";
                 sAaN.setText(alarmNumber);
-                new DialogFrame(); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
+                new DialogFrame(mainPanel, 0); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
                 
             }
            
@@ -232,7 +231,7 @@ public class AlarmFrame /*implements ActionListener */{
             public void actionPerformed(ActionEvent evnt) {
                 alarmNumber = "2";
                 sAaN.setText(alarmNumber);
-                new DialogFrame(); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
+                new DialogFrame(mainPanel, 1); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
             }
            
         });
@@ -242,7 +241,7 @@ public class AlarmFrame /*implements ActionListener */{
             public void actionPerformed(ActionEvent evnt) {
                 alarmNumber = "3";
                 sAaN.setText(alarmNumber);
-                new DialogFrame(); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
+                new DialogFrame(mainPanel, 2); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
             }
            
         });
@@ -252,7 +251,7 @@ public class AlarmFrame /*implements ActionListener */{
             public void actionPerformed(ActionEvent evnt) {
                 alarmNumber = "4";
                 sAaN.setText(alarmNumber);
-                new DialogFrame(); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
+                new DialogFrame(mainPanel, 3); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
             }
            
         });
@@ -262,14 +261,19 @@ public class AlarmFrame /*implements ActionListener */{
             public void actionPerformed(ActionEvent evnt) {
                 alarmNumber = "5";
                 sAaN.setText(alarmNumber);
-                new DialogFrame(); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
+                new DialogFrame(mainPanel, 4); //Вызывает класс DialogFrame для построение диалогового окна, при этом передавая ему в качестве параметра окно af
             }
            
         });
-        
+                
         
     }
-    
+    /*
+    public static void alarmFrame () {
+
+        
+    }
+    */
     
     
     /*
